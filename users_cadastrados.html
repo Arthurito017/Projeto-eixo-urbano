@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários Cadastrados - Eixo Urbano</title>
+    <link rel="icon" href="img/eixou-logo-removebg-preview.png">
+    <link rel="icon" href="img/WhatsApp Image 2024-10-28 at 6.31.02 PM.jpeg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="img/WhatsApp Image 2024-10-28 at 6.31.02 PM.jpeg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Geral */
+        body {
+            font-family: "Roboto", "Noto Sans", sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin-top: 90px;
+            /* Ajustado para evitar sobreposição da navbar fixa */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            border-bottom: 2px solid #d4af37;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand img.logo {
+            height: 60px;
+            transition: height 0.3s ease;
+        }
+
+        .navbar-nav .nav-link {
+            color: #d4af37;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #333;
+        }
+
+        /* Campo de Busca */
+        #search-input {
+            border: 1px solid #d4af37;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        #search-input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            outline: none;
+        }
+
+        /* Tabela */
+        .table-responsive {
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .table {
+            margin-bottom: 0;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .table thead th {
+            background-color: #d4af37;
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+            padding: 15px;
+            border-bottom: 2px solid #e6e6e6;
+        }
+
+        .table tbody td {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e6e6e6;
+            word-wrap: break-word;
+            max-width: 200px;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Estilo dos botões de ações na tabela */
+        .table tbody td .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            /* Espaço entre os botões */
+        }
+
+        .table tbody td .btn {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Botões */
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1rem;
+            background-color: #d4af37;
+        }
+
+        .btn-success {
+            background-color: #d4af37;
+            border: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-success:hover {
+            background-color: #b88e2b;
+        }
+
+        .btn-secondary {
+            background-color: #333;
+            border: none;
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-secondary:hover {
+            background-color: #555;
+        }
+
+        /* Paginação */
+        .pagination-controls {
+            margin-top: 20px;
+        }
+
+        .pagination-controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+        }
+
+        /* Melhorias para Responsividade */
+        @media (max-width: 992px) {
+            .navbar-brand img.logo {
+                height: 50px;
+            }
+
+            .table tbody td {
+                font-size: 0.85rem;
+            }
+
+            .pagination-controls button {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #search-input {
+                font-size: 0.9rem;
+            }
+
+            .table tbody td {
+                font-size: 0.8rem;
+            }
+
+            .pagination-controls {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar-brand img.logo {
+                height: 40px;
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 0.9rem;
+            }
+
+            .table thead th {
+                font-size: 0.8rem;
+                padding: 10px;
+            }
+
+            .table tbody td {
+                font-size: 0.75rem;
+                padding: 8px;
+            }
+
+            /* Ajustes para inputs no modo de edição */
+            .table tbody td input {
+                width: 100%;
+                /* Preenche a largura da célula */
+                max-width: 200px;
+                /* Define uma largura máxima para não ultrapassar */
+                box-sizing: border-box;
+                /* Inclui padding e border na largura total */
+                padding: 5px;
+                font-size: 0.9rem;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+            }
+
+            .table tbody td input:focus {
+                border-color: #d4af37;
+                /* Destaque ao focar */
+                box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+
+
+            .btn {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./img/eixou-logo-removebg-preview.png" alt="EIXO URBANO" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="./sobre-nos.html" target="_blank">Sobre</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="./index.html" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Imóveis
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="./imoveis.html" target="_blank">Aluguel</a>
+                            <a class="dropdown-item" href="./imoveis.html" target="_blank">Venda</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="login.html" target="_blank">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./cadastro.html" target="_blank">Cadastre-se</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/eixourbano" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://wa.me/5511999999999" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-4">
+        <h1 class="text-center">Usuários Cadastrados</h1>
+
+        <!-- Campo de busca -->
+        <div class="mb-3">
+            <input type="text" id="search-input" class="form-control" placeholder="Buscar por nome ou email"
+                onkeyup="filterUsers()">
+        </div>
+
+        <!-- Tabela de usuários -->
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome Completo</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>CPF</th>
+                        <th>Tipo de Usuário</th>
+                        <th>Data de Cadastro</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table"></tbody>
+            </table>
+        </div>
+
+        <!-- Botões -->
+        <div class="text-center">
+            <button class="btn btn-success mb-3" onclick="exportToCSV()">Exportar para CSV</button>
+        </div>
+
+        <!-- Paginação -->
+        <div class="pagination-controls text-center">
+            <button id="prev-button" class="btn btn-secondary" onclick="fetchUsers(currentPage - 1)">Anterior</button>
+            <button id="next-button" class="btn btn-secondary" onclick="fetchUsers(currentPage + 1)">Próximo</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        let currentPage = 1;
+        let totalPages = 1;
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+
+        async function fetchUsers(page = 1) {
+            currentPage = page;
+            try {
+                const response = await fetch(`http://localhost:3000/users?page=${page}&limit=10`);
+                if (!response.ok) throw new Error("Erro ao buscar usuários.");
+
+                const { users, totalPages: tp } = await response.json();
+                totalPages = tp;
+
+                const tableBody = document.getElementById("user-table");
+                tableBody.innerHTML = "";
+
+                users.forEach(user => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${user.id}</td>
+                        <td><span class="field" data-field="full_name">${user.full_name}</span></td>
+                        <td><span class="field" data-field="email">${user.email}</span></td>
+                        <td><span class="field" data-field="telefone">${user.telefone || "Não informado"}</span></td>
+                        <td><span class="field" data-field="cpf">${user.cpf}</span></td>
+                        <td><span class="field" data-field="user_type">${user.user_type}</span></td>
+                        <td>${new Date(user.created_at).toLocaleString()}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" onclick="toggleEdit(this, ${user.id})">Editar</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteUser(${user.id})">Excluir</button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+
+                prevButton.disabled = currentPage === 1;
+                nextButton.disabled = currentPage >= totalPages;
+            } catch (error) {
+                console.error("Erro ao carregar usuários:", error);
+                alert("Erro ao carregar a lista de usuários.");
+            }
+        }
+
+        async function deleteUser(userId) {
+            if (!confirm("Tem certeza que deseja excluir este usuário?")) return;
+            try {
+                const response = await fetch(`http://localhost:3000/users/${userId}`, { method: "DELETE" });
+                if (!response.ok) throw new Error("Erro ao excluir usuário.");
+                alert("Usuário excluído com sucesso!");
+                fetchUsers(1);
+            } catch (error) {
+                console.error(error);
+                alert("Erro ao excluir o usuário.");
+            }
+        }
+
+
+        function exportToCSV() {
+            const rows = document.querySelectorAll("#user-table tr");
+            let csvContent = "data:text/csv;charset=utf-8,ID,Nome Completo,Email,Telefone,CPF,Tipo de Usuário,Data de Cadastro\n";
+
+            rows.forEach(row => {
+                const columns = row.querySelectorAll("td");
+                const rowData = Array.from(columns).map(col => col.textContent).join(",");
+                csvContent += rowData + "\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "usuarios.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function filterUsers() {
+            const searchValue = document.getElementById("search-input").value.toLowerCase();
+            const rows = document.querySelectorAll("#user-table tr");
+
+            rows.forEach(row => {
+                const name = row.cells[1].textContent.toLowerCase();
+                const email = row.cells[2].textContent.toLowerCase();
+                const userType = row.cells[5].textContent.toLowerCase();
+                row.style.display = (name.includes(searchValue) || email.includes(searchValue) || userType.includes(searchValue)) ? "" : "none";
+            });
+        }
+
+        async function toggleEdit(button, userId) {
+            const row = button.closest("tr");
+
+            if (button.textContent === "Editar") {
+                const fields = row.querySelectorAll(".field");
+
+                fields.forEach(field => {
+                    const input = document.createElement("input");
+                    input.type = "text";
+                    input.value = field.textContent.trim();
+                    input.setAttribute("data-field", field.getAttribute("data-field"));
+
+                    // Ajustar largura do input para corresponder à largura original do conteúdo
+                    input.style.width = `${field.offsetWidth}px`;
+                    input.style.boxSizing = "border-box";
+
+                    field.replaceWith(input);
+                });
+
+                const userTypeElement = row.querySelector('[data-field="user_type"]');
+                if (userTypeElement) {
+                    const currentType = userTypeElement.textContent.trim();
+                    const select = document.createElement("select");
+                    select.setAttribute("data-field", "user_type");
+
+                    ["locador", "locatario"].forEach(optionValue => {
+                        const option = document.createElement("option");
+                        option.value = optionValue;
+                        option.textContent = optionValue;
+                        if (optionValue === currentType) {
+                            option.selected = true;
+                        }
+                        select.appendChild(option);
+                    });
+
+                    userTypeElement.replaceWith(select);
+                }
+
+                button.textContent = "Salvar";
+            } else {
+                const inputs = row.querySelectorAll("input[data-field], select[data-field]");
+                const data = {};
+
+                inputs.forEach(input => {
+                    const fieldName = input.getAttribute("data-field");
+                    data[fieldName] = input.value.trim();
+                });
+
+                // Validação básica dos campos
+                if (!data.full_name || !data.email || !data.telefone || !data.cpf || !data.user_type) {
+                    alert("Todos os campos são obrigatórios.");
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`http://localhost:3000/users/${userId}`, {
+                        method: "PUT",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(data),
+                    });
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert(result.message);
+                        button.textContent = "Editar";
+                        fetchUsers(currentPage); // Recarrega a tabela
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error("Erro ao atualizar usuário:", error);
+                    alert("Erro ao atualizar usuário.");
+                }
+            }
+        }
+
+        fetchUsers();
+
+    </script>
+</body>
+
+</html>

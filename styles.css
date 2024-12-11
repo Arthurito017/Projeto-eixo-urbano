@@ -1,0 +1,1033 @@
+/* Estilos gerais */
+body {
+    font-family: "Roboto", "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC Sliced", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos para a Navbar */
+.navbar {
+    background-color: #fff;
+    /* Branco */
+    border-bottom: 2px solid #d4af37;
+    /* Linha dourada na parte inferior */
+}
+
+.navbar-brand img.logo {
+    height: 80px;
+    /* Ajuste a altura conforme necessário */
+}
+
+.navbar-nav .nav-link {
+    color: #d4af37;
+    /* Dourado */
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #333;
+    /* Cor escura ao passar o mouse */
+}
+
+.navbar-toggler {
+    border-color: #d4af37;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28212, 175, 55, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-item .fab {
+    font-size: 1.5rem;
+    color: #d4af37;
+    /* Dourado */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.navbar-nav .nav-item .fab:hover {
+    transform: scale(1.1);
+    color: #333;
+    /* Cor escura ao passar o mouse */
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    /* Branco */
+    border: 1px solid #d4af37;
+    /* Borda dourada */
+}
+
+.dropdown-item {
+    color: #333;
+    /* Dourado */
+}
+
+.dropdown-item:hover {
+    background-color: #d4af37;
+    /* Fundo dourado */
+    color: #fff;
+    /* Texto branco */
+}
+
+
+section {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Formulário Inicial */
+#main-banner {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)),
+        url('./img/banner1.jpg') no-repeat center center / cover;
+    position: relative;
+    margin-top: 100px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+#search-form {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    /* Transparência ajustada */
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    /* Borda clara para contraste */
+    border-radius: 15px;
+    padding: 2.5em 2em;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    /* Efeito de desfoque para sofisticação */
+}
+
+#search-form h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: "Roboto", "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC Sliced", sans-serif;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    /* Sombra leve no texto */
+}
+
+#search-form h2 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #555;
+    font-family: "Roboto", "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Sans SC Sliced", sans-serif;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    /* Melhor contraste */
+}
+
+#search-form input[type=submit] {
+    background-color: #d4af37;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Roboto", "Noto Sans", sans-serif;
+    text-transform: uppercase;
+}
+
+#search-form input[type=submit]:hover {
+    background-color: #333;
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #search-form {
+        padding: 2em 1.5em;
+    }
+
+    #search-form h1 {
+        font-size: 28px;
+    }
+
+    #search-form h2 {
+        font-size: 16px;
+    }
+
+    #search-form input[type=submit] {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}
+
+/* Estilos para a seção de avaliação e venda de imóveis */
+#sellerLead {
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+}
+
+#sellerLead .title_level_2 {
+    color: #d4af37;
+    /* Dourado */
+    margin-bottom: 1rem;
+}
+
+#sellerLead .sub-title {
+    color: #333;
+    /* Texto escuro */
+    margin-bottom: 2rem;
+}
+
+.action-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.action-box {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    color: #fff;
+    /* Texto branco */
+    background-color: #333;
+    /* Fundo escuro */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.action-box:hover {
+    transform: scale(1.05);
+    background-color: #444;
+    /* Fundo escuro mais claro */
+}
+
+.action-box__icon {
+    margin-top: 1rem;
+    font-size: 2rem;
+    color: #d4af37;
+    /* Dourado */
+    animation: bounce 2s infinite;
+}
+
+.action-box__content {
+    padding: 1rem;
+}
+
+.action-box__title {
+    color: #d4af37;
+    /* Dourado */
+    margin-bottom: 0.5rem;
+
+}
+
+.action-box__text {
+    color: #fff;
+    /* Texto branco */
+    margin-bottom: 1rem;
+
+}
+
+.action-box__cta {
+    color: #d4af37;
+    /* Dourado */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.action-boxes a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.action-boxes a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+/* Animação de bounce */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Carrossel */
+#main-content {
+    width: 100%;
+    height: 70vh;
+    /* 70% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cards-carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    height: 70vh;
+    /* 70% da altura da tela */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo semitransparente */
+    padding: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    /* Texto branco */
+}
+
+.carousel-caption h3 {
+    color: #d4af37;
+    /* Dourado */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #d4af37;
+    /* Dourado */
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #d4af37;
+    /* Dourado */
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    /* Dourado mais escuro */
+}
+
+
+
+/* Aluguel e vendas */
+.rental-properties {
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+}
+
+.rental-properties h2 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.rental-properties .card {
+    width: 18rem;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.rental-properties .card:hover {
+    transform: scale(1.05);
+}
+
+.rental-properties .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.rental-properties .card-body {
+    text-align: center;
+}
+
+.rental-properties .card-title {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.rental-properties .card-text {
+    color: #333;
+}
+
+.rental-properties .text-gold {
+    color: #d4af37;
+}
+
+.rental-properties .carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.rental-properties .card:hover .carousel {
+    display: block;
+}
+
+.rental-properties .carousel-inner img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.rental-properties a {
+    text-decoration: none;
+}
+
+.rental-properties a:hover {
+    text-decoration: none;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.icon-text i {
+    color: #d4af37;
+}
+
+/* Estilos para o Footer */
+.footer {
+    background-color: #fff;
+    border-top: 2px solid #d4af37;
+    padding: 2rem 0;
+    color: #d4af37;
+}
+
+.footer h5 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    color: #333;
+}
+
+.footer .social-icons a {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    transform: scale(1.1);
+    color: #333;
+}
+
+.footer .text-center {
+    color: #333;
+}
+
+.footer-section p {
+    text-indent: 1em;
+    line-height: 1.6;
+    margin: 1em 0;
+    text-align: justify;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer .contact-info i {
+    margin-right: 0.5rem;
+}
+
+.footer .btn-gold {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.footer .btn-gold:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Barra de Filtros */
+.filters {
+    margin-top: 100px;
+    /* Evita sobreposição com a navbar */
+    background-color: #f4f4f4;
+    padding: 15px;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters .form-group {
+    flex: 1;
+    margin-right: 15px;
+    min-width: 200px;
+    /* Garante boa largura para os campos */
+}
+
+.filters .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filters .btn-success {
+    background-color: #d4af37;
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.filters .btn-success:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters .form-group {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.input-group-text {
+    background-color: #d4af37;
+    ;
+    color: white;
+}
+
+/* Cards no Grid */
+.property-card {
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.property-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.property-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.property-card .card-title {
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.property-card .card-text {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.property-card .icon-text i {
+    color: #d4af37;
+    margin-right: 5px;
+}
+
+.property-card .text-gold {
+    color: #d4af37;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+
+    .property-card .card-img-top {
+        height: 150px;
+    }
+}
+
+
+/* Página Sobre Nós */
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.about-us h2,
+.about-us h3 {
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bg-gold {
+    background-color: #d4af37;
+}
+
+.icon {
+    color: #d4af37;
+    font-size: 2rem;
+    display: block;
+}
+
+
+/* Página Sobre Nós */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.about-us h2,
+.about-us h3 {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.carousel-about {
+    max-width: 600px;
+    margin: 0 auto;
+    /* Centraliza o carrossel */
+}
+
+.carousel-about .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel-about .card-header {
+    background-color: #d4af37;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.carousel-about .card-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Botões do Carrossel */
+.custom-control {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Fundo bem discreto */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-about-control-prev {
+    left: -40px;
+}
+
+.carousel-about-control-next {
+    right: -40px;
+}
+
+.custom-control:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fundo mais opaco no hover */
+}
+
+.carousel-about-prev-icon,
+.carousel-about-next-icon {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Cards de Valores */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    color: #d4af37;
+    font-size: 2rem;
+}
+
+/* Ajuste entre seções */
+h3.text-center.my-5 {
+    margin-top: 3rem;
+}
+
+.row.text-center.mt-5 {
+    margin-top: 4rem;
+    /* Maior espaçamento para os cards */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-about {
+        max-width: 100%;
+    }
+
+    .about-us h2,
+    .about-us h3 {
+        font-size: 1.5rem;
+    }
+
+    .card-body p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+/* Ajustes na seção de cadastro */
+.cadastro-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinha o card abaixo */
+    min-height: calc(100vh - 80px);
+    /* Altura da viewport menos a altura da navbar */
+    padding: 100px 20px 20px;
+    /* Espaçamento superior ajustado para evitar sobreposição */
+    background-image: url(./img/banner5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Container para centralizar o card */
+.cadastro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card de cadastro */
+.cadastro-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    /* Ajuste para telas menores */
+}
+
+/* Ajustes no card-header */
+.cadastro-card .card-header {
+    background-color: #d4af37;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Ajustes no formulário */
+.cadastro-card .form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cadastro-card .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Botão Cadastrar */
+.cadastro-card .btn-success {
+    background-color: #d4af37;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cadastro-card .btn-success:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Link para login */
+.cadastro-card .text-decoration-none {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.cadastro-card .text-decoration-none:hover {
+    color: #d4af37;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cadastro-card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .cadastro-card .card-header {
+        font-size: 1.25rem;
+    }
+}
+
+/* Ajustes na seção de login */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Alinha o card abaixo da navbar */
+    min-height: calc(100vh - 80px);
+    /* Altura da viewport menos a altura da navbar */
+    padding: 100px 20px 20px;
+    /* Espaçamento superior ajustado */
+    background-image: url(./img/banner5.jpg);
+    /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container do card de login */
+.login-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Fundo branco translúcido */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para destaque */
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    /* Tamanho máximo para telas maiores */
+    margin-top: 20px;
+    /* Espaçamento superior */
+}
+
+/* Cabeçalho do card */
+.login-card .card-header {
+    background-color: #d4af37;
+    /* Dourado */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Labels e campos do formulário */
+.login-card .form-label {
+    font-weight: bold;
+    color: #333;
+}
+
+.login-card .form-control {
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    border: 1px solid #ccc;
+    /* Borda cinza clara */
+    padding: 10px;
+}
+
+/* Botão Entrar */
+.login-card .btn-success {
+    background-color: #d4af37;
+    /* Dourado */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.login-card .btn-success:hover {
+    background-color: #333;
+    /* Cinza escuro */
+    color: #fff;
+    /* Texto branco */
+}
+
+/* Links do formulário */
+.login-card .text-decoration-none {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.login-card .text-decoration-none:hover {
+    color: #d4af37;
+    /* Dourado */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-card {
+        max-width: 100%;
+        /* Ocupa a largura total em telas menores */
+        padding: 15px;
+        /* Reduz o padding */
+    }
+
+    .login-card .card-header {
+        font-size: 1.25rem;
+        /* Reduz o tamanho da fonte */
+    }
+}
+
+
+/* Filtros laterais */
+.custom-filters {
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    /* Aumentar a largura para dar mais espaço */
+}
+
+.custom-filters h5 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.custom-filters .form-group {
+    margin-bottom: 20px;
+}
+
+.custom-filters .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.custom-filters .btn-primary {
+    background-color: #d4af37;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    width: 100%;
+    /* Botão ocupa toda a largura */
+}
+
+.custom-filters .btn-primary:hover {
+    background-color: #333;
+    color: white;
+}
+
+.input-group .form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+
+.input-group-text {
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-weight: bold;
+}
+
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .custom-filters {
+        width: 100%;
+        /* Ocupa toda a largura em telas menores */
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "project_site_imob_eixo_urbano-main",
+  "version": "1.0.0",
+  "description": "## Descrição Este é o site oficial da imobiliária Eixo Urbano, desenvolvido para oferecer uma experiência intuitiva e responsiva aos usuários que buscam imóveis. O site foi criado utilizando HTML e CSS, com foco em um design moderno e funcional.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1"
+  }
+}
